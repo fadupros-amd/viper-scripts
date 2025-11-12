@@ -57,7 +57,7 @@ if [ $? -eq 0 ]; then
     echo "Compilation successful!"
     echo "Running the program..."
     echo "------------------------"
-    ./cpu_affinity
+    srun ./cpu_affinity
     echo "------------------------"
 else
     echo "Compilation failed!"
