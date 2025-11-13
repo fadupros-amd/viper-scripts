@@ -8,10 +8,10 @@ LOG_FILE="$HOME/submit.log"
 
 RUNNING=$(squeue -u $USER -n $JOB_NAME -h -t RUNNING,PENDING | wc -l)
 if [ $RUNNING -gt 0 ]; then
-    echo "$(date): Job '$JOB_NAME' déjà en cours, pas de soumission" >> $LOG_FILE
+    echo "$(date): Job '$JOB_NAME' already running" >> $LOG_FILE
     exit 0
 else
-    # Soumettre le job
+    # Submit the job
     sbatch $SCRIPT_PATH
-    echo "$(date): Job '$JOB_NAME' soumis" >> $LOG_FILE
+    echo "$(date): Job '$JOB_NAME' submitted" >> $LOG_FILE
 fi
