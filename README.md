@@ -1,8 +1,8 @@
 # viper-scripts  : script/data for both Viper and Ouranos
 ## Simple binding check
 - **binding_simple_ouranos.sh** : report binding on ouranos (using default SLURM Setting for the pytorch/RCCL reproducer)
-   *`Thread 140692290500096 affinity mask: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83`
-   *`Thread 139956932949504 affinity mask: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59`
+- `Thread 140692290500096 affinity mask: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83`
+- `Thread 139956932949504 affinity mask: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59`
 
 - **binding_simple_viper.sh** : report binding on viper-gpu (using default SLURM Setting for the pytorch/RCCL reproducer)
    *Thread 22798218901312 affinity mask: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
