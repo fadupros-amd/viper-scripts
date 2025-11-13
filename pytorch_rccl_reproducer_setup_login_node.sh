@@ -52,9 +52,9 @@ pixi run -e rocm hf auth login --token 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
 sed -i '1,11d' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
 sed -i "1i\\
 #!/bin/bash\\
-#SBATCH -J RCCL\\
-#SBATCH -o $TARGET_DIR/RCCL_%j.out\\
-#SBATCH -e $TARGET_DIR/RCCL_%j.err\\
+#SBATCH -J RCCL_reproducer\\
+#SBATCH -o $TARGET_DIR/RCCL_reproducer%j.out\\
+#SBATCH -e $TARGET_DIR/RCCL_reproducer%j.err\\
 #SBATCH --ntasks-per-node=2  # This needs to match Trainer(devices=...)\\
 #SBATCH --nodes=1            # This needs to match Trainer(num_nodes=...)\\
 #SBATCH --cpus-per-task=24\\
