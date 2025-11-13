@@ -23,7 +23,7 @@
 ## Customizing the benchmark
 - Training based on Pytorch, dataset is imagenet. 
 - Normal completion is *CANCELLED.. DUE TO TIME LIMIT* after 12 hours.
-- One can modify the benchmark and improve vebosity.
-   - reduce the epoch parameter (full pass) from 90 to 1
-   - 
+- One can modify the benchmark to reduce overall elsapsed time
+   - Adapt the epoch parameter (number of full pass on the images) from 90 to 1.
+   - Runtime is now below 20 minutes and completion message is : *Training completed!* + some sanity checks
   
