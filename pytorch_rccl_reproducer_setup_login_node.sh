@@ -13,7 +13,7 @@ export HF_DATASETS_CACHE=$TARGET_DIR/HF_DATA_CACHE
 export PATH="/home_nfs/xduprosf/.pixi/bin:$PATH"
 export PIXI_HOME=$TARGET_DIR/PXI_HOME
 export PIXI_CACHE_DIR=$TARGET_DIR/PXI_CACHE
-export HUGGINGFACE_HUB_TOKEN=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
+export HUGGINGFACE_HUB_TOKEN=TBD
 
 mkdir $TARGET_DIR
 cd $TARGET_DIR
@@ -49,7 +49,7 @@ sed -i '/^\[feature\.rocm\.activation\.env\]/,/^\[.*\]/ {
 
 ####################
 pixi run -e rocm wandb disabled
-pixi run -e rocm hf auth login --token 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  --add-to-git-credential
+pixi run -e rocm hf auth login --token TBD  --add-to-git-credential
 ####################
 sed -i '1,11d' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
 sed -i "1i\\
