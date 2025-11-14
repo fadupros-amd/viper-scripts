@@ -74,7 +74,7 @@ export TRANSFORMERS_OFFLINE=1\
 export PATH="/home_nfs/xduprosf/.pixi/bin:$PATH"\
 export PIXI_HOME=$TARGET_DIR/PXI_HOME\
 export PIXI_CACHE_DIR=$TARGET_DIR/PXI_CACHE' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
-
+export HUGGINGFACE_HUB_TOKEN=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
 sed -i 's|/u/gajdab/.pixi/bin/pixi|pixi|g' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
 
 
