@@ -1,8 +1,8 @@
 # viper-scripts  : script/data for both Viper and Ouranos
-## Simple binding check
-- **affinity_script.sh** : report binding on the target system (generic)
-- Three examples are provided for illustration (output file for 1 thread) for Ouranos, Viper and Lockhart. This includes info also on the NUMA topology, HT...
-- Three experiments :  OpenMP threads, Pthreads and Binding script from from ORNL
+## Binding
+- Repositories for Viper and Ouranos that includes : 
+- SLURM scripts and output files for each system (1 or 2 tasks and 1,2 and 4 threads per task)
+- Three experiments : OpenMP threads, explicit multithreading (Pthreads) and Hello_Jobstep benchmark from ORNL.
 
   
 ## One-time setup on Ouranos (login node) for the Pytorch_RCCL Reproducer + model download (+300 GB)
