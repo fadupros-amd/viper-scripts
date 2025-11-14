@@ -1,0 +1,226 @@
+=== RUN START Fri Nov 14 19:57:05 UTC 2025 on pm10-nod014 ===
+SLURM: JOB_ID=45926 NODES=1 NTASKS=2 TPERNODE=2 CPUS_PER_TASK=24
+[INFO] USE_SRUN_FOR_BC=1 (1 => B and C will use srun when >1 tasks allocated)
+
+========== SLURM VERSION ==========
+slurm 24.11.5
+slurm 24.11.5
+slurm 24.11.5
+
+========== SLURM FULL JOB SETTINGS ==========
+JobId=45926 JobName=affinity12.sh
+   UserId=xduprosf(58470) GroupId=amd(51188) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   DerivedExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2025-11-14T19:57:04 EligibleTime=2025-11-14T19:57:04
+   AccrueTime=2025-11-14T19:57:04
+   StartTime=2025-11-14T19:57:04 EndTime=2025-11-14T20:07:04 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2025-11-14T19:57:04 Scheduler=Main
+   Partition=All_AMD_Node AllocNode:Sid=pm10-nod014:20344
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=pm10-nod014
+   BatchHost=pm10-nod014
+   NumNodes=1 NumCPUs=96 NumTasks=2 CPUs/Task=24 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=48,mem=1M,node=1,billing=48
+   AllocTRES=cpu=96,node=1,billing=96
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   JOB_GRES=gpu:0
+     Nodes=pm10-nod014 CPU_IDs=0-95 Mem=0 GRES=gpu:0(IDX:)
+   MinCPUsNode=48 MinMemoryNode=0 MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home_nfs/xduprosf/affinity12.sh
+   WorkDir=/home_nfs/xduprosf
+   StdErr=/home_nfs/xduprosf/bind-45926.error
+   StdIn=/dev/null
+   StdOut=/home_nfs/xduprosf/bind-45926.out
+   TresPerTask=cpu=24
+   
+
+StepId=45926.batch UserId=58470 StartTime=2025-11-14T19:57:04 TimeLimit=UNLIMITED
+   State=RUNNING Partition=All_AMD_Node NodeList=pm10-nod014
+   Nodes=1 CPUs=0 Tasks=1 Name=batch Network=(null)
+   TRES=(null)
+   ResvPorts=(null)
+   CPUFreqReq=Default
+   SrunHost:Pid=(null):0
+
+
+========== SOFTWARE VERSIONS (HIP, ROCm) ==========
+
+
+============================ ROCm System Management Interface ============================
+============================== Version of System Component ===============================
+Driver version: 6.12.12
+==========================================================================================
+======================================= PCI Bus ID =======================================
+GPU[0]		: PCI Bus: 0000:01:00.0
+GPU[1]		: PCI Bus: 0000:81:00.0
+==========================================================================================
+====================================== Product Info ======================================
+GPU[0]		: Card Series: 		AMD Radeon Graphics
+GPU[0]		: Card Model: 		0x74a0
+GPU[0]		: Card Vendor: 		Advanced Micro Devices, Inc. [AMD/ATI]
+GPU[0]		: Card SKU: 		N/A
+GPU[0]		: Subsystem ID: 	0x74a0
+GPU[0]		: Device Rev: 		0x00
+GPU[0]		: Node ID: 		2
+GPU[0]		: GUID: 		10326
+GPU[0]		: GFX Version: 		gfx942
+GPU[1]		: Card Series: 		AMD Radeon Graphics
+GPU[1]		: Card Model: 		0x74a0
+GPU[1]		: Card Vendor: 		Advanced Micro Devices, Inc. [AMD/ATI]
+GPU[1]		: Card SKU: 		N/A
+GPU[1]		: Subsystem ID: 	0x74a0
+GPU[1]		: Device Rev: 		0x00
+GPU[1]		: Node ID: 		3
+GPU[1]		: GUID: 		34871
+GPU[1]		: GFX Version: 		gfx942
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+HIP version: 6.4.43484-123eb5128
+AMD clang version 19.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-6.4.3 25224 d366fa84f3fdcbd4b10847ebd5db572ae12a34fb)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rocm-6.4.3/lib/llvm/bin
+Configuration file: /opt/rocm-6.4.3/lib/llvm/bin/clang++.cfg
+6.4.43484-123eb5128HIP version: 6.4.43484-123eb5128
+
+==hipconfig
+HIP_PATH           :/opt/rocm-6.4.3
+ROCM_PATH          :/opt/rocm-6.4.3
+HIP_COMPILER       :clang
+HIP_PLATFORM       :amd
+HIP_RUNTIME        :rocclr
+CPP_CONFIG         : -D__HIP_PLATFORM_HCC__= -D__HIP_PLATFORM_AMD__= -I/opt/rocm-6.4.3/include -I/include
+
+==hip-clang
+HIP_CLANG_PATH     :/opt/rocm-6.4.3/lib/llvm/bin
+AMD clang version 19.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-6.4.3 25224 d366fa84f3fdcbd4b10847ebd5db572ae12a34fb)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rocm-6.4.3/lib/llvm/bin
+Configuration file: /opt/rocm-6.4.3/lib/llvm/bin/clang++.cfg
+AMD LLVM version 19.0.0git
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: znver3
+
+  Registered Targets:
+    amdgcn - AMD GCN GPUs
+    r600   - AMD GPUs HD2XXX-HD6XXX
+    x86    - 32-bit X86: Pentium-Pro and above
+    x86-64 - 64-bit X86: EM64T and AMD64
+hip-clang-cxxflags :
+ -O3
+hip-clang-ldflags :
+--driver-mode=g++ -O3 -Llib --hip-link
+
+== Environment Variables
+PATH =/opt/rocm-6.4.3/bin:/opt/rocm-6.4.3/llvm/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test32/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test31/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test3/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-v3/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-v2/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer/PXI_HOME/bin:/home_nfs/xduprosf/.pixi/bin:/home_nfs/xduprosf/.local/bin:/home_nfs/xduprosf/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+HIP_PATH=/opt/rocm-6.4.3
+LD_LIBRARY_PATH=/opt/rocm-6.4.3/lib
+
+== Linux Kernel
+Hostname      :
+pm10-nod014
+Linux pm10-nod014 5.14.0-427.74.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jun 13 12:07:50 EDT 2025 x86_64 x86_64 x86_64 GNU/Linux
+LSB Version:	n/a
+Distributor ID:	RedHatEnterprise
+Description:	Red Hat Enterprise Linux 9.4 (Plow)
+Release:	9.4
+Codename:	n/a
+
+
+========== SYSTEM TOPOLOGY ==========
+Architecture:                         x86_64
+CPU(s):                               96
+On-line CPU(s) list:                  0-95
+Model name:                           AMD Instinct MI300A Accelerator
+Thread(s) per core:                   2
+Core(s) per socket:                   24
+Socket(s):                            2
+CPU(s) scaling MHz:                   100%
+NUMA node(s):                         2
+NUMA node0 CPU(s):                    0-23,48-71
+NUMA node1 CPU(s):                    24-47,72-95
+-- HWLOC (NUMA only) --
+NUMANode L#0 (P#0 125GB)
+NUMANode L#1 (P#1 126GB)
+=====================================
+[INFO] Compiling hello_jobstep (HIP + OpenMP, NUMA optional via dlopen)...
+✓ Built: /tmp/hello_jobstep_gpu_45926_21015
+
+========== EXPERIMENT A: hello_jobstep (HIP+OMP) OMP_NUM_THREADS=1 ==========
+A: MPI 000 - OMP 000 - HWT 059 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 000 - HWT 083 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+
+========== EXPERIMENT A: hello_jobstep (HIP+OMP) OMP_NUM_THREADS=2 ==========
+A: MPI 000 - OMP 000 - HWT 059 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 000 - OMP 001 - HWT 000 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 000 - HWT 083 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 001 - HWT 079 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+
+========== EXPERIMENT A: hello_jobstep (HIP+OMP) OMP_NUM_THREADS=4 ==========
+A: MPI 000 - OMP 000 - HWT 059 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 000 - OMP 001 - HWT 000 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 000 - OMP 002 - HWT 058 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 000 - OMP 003 - HWT 055 - NUMA 0 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 000 - HWT 083 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 001 - HWT 024 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 002 - HWT 081 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+A: MPI 001 - OMP 003 - HWT 079 - NUMA 1 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+[INFO] Compiling pthreads_affinity (NUMA optional via dlopen)...
+✓ Built: /tmp/pthreads_affinity_45926_21015
+
+========== EXPERIMENT B: POSIX pthreads, THREADS=1 ==========
+B: Node pm10-nod014 - PTHREAD 000 - HWT 056 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 000 - HWT 080 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+[B:Context] PID=21258, THREADS=1
+[B:Context] PID=21259, THREADS=1
+
+========== EXPERIMENT B: POSIX pthreads, THREADS=2 ==========
+B: Node pm10-nod014 - PTHREAD 000 - HWT 057 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 000 - HWT 080 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+B: Node pm10-nod014 - PTHREAD 001 - HWT 005 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 001 - HWT 025 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+[B:Context] PID=21288, THREADS=2
+[B:Context] PID=21289, THREADS=2
+
+========== EXPERIMENT B: POSIX pthreads, THREADS=4 ==========
+B: Node pm10-nod014 - PTHREAD 000 - HWT 011 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 000 - HWT 083 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+B: Node pm10-nod014 - PTHREAD 001 - HWT 002 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 001 - HWT 030 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+B: Node pm10-nod014 - PTHREAD 002 - HWT 056 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 002 - HWT 080 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+B: Node pm10-nod014 - PTHREAD 003 - HWT 004 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+B: Node pm10-nod014 - PTHREAD 003 - HWT 026 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+[B:Context] PID=21320, THREADS=4
+[B:Context] PID=21321, THREADS=4
+[INFO] Compiling omp_affinity (NUMA optional via dlopen)...
+✓ Built: /tmp/omp_affinity_45926_21015
+
+========== EXPERIMENT C: OpenMP, OMP_NUM_THREADS=1 ==========
+C: Node pm10-nod014 - OMP 000 - HWT 007 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 000 - HWT 024 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+
+========== EXPERIMENT C: OpenMP, OMP_NUM_THREADS=2 ==========
+C: Node pm10-nod014 - OMP 000 - HWT 024 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+C: Node pm10-nod014 - OMP 000 - HWT 050 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 001 - HWT 057 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 001 - HWT 080 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+
+========== EXPERIMENT C: OpenMP, OMP_NUM_THREADS=4 ==========
+C: Node pm10-nod014 - OMP 000 - HWT 024 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+C: Node pm10-nod014 - OMP 000 - HWT 050 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 001 - HWT 057 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 001 - HWT 080 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+C: Node pm10-nod014 - OMP 002 - HWT 025 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+C: Node pm10-nod014 - OMP 002 - HWT 053 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 003 - HWT 056 - NUMA 0 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 48 49 50 51 52 53 54 55 56 57 58 59 
+C: Node pm10-nod014 - OMP 003 - HWT 081 - NUMA 1 - Affinity: 24 25 26 27 28 29 30 31 32 33 34 35 72 73 74 75 76 77 78 79 80 81 82 83 
+=== RUN END Fri Nov 14 19:57:11 UTC 2025 ===
