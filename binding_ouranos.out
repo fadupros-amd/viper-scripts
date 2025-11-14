@@ -1,0 +1,334 @@
+=== RUN START Fri Nov 14 15:47:36 UTC 2025 on pm10-nod014 ===
+SLURM: NODES=1 NTASKS=1 TPERNODE=1 CPUS_PER_TASK=24
+
+========== SLURM VERSION ==========
+slurm 24.11.5
+slurm 24.11.5
+slurm 24.11.5
+
+========== SLURM FULL JOB SETTINGS ==========
+-- scontrol show job -dd 45922 --
+JobId=45922 JobName=affinity_script.sh
+   UserId=xduprosf(58470) GroupId=amd(51188) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   DerivedExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2025-11-14T15:47:35 EligibleTime=2025-11-14T15:47:35
+   AccrueTime=2025-11-14T15:47:35
+   StartTime=2025-11-14T15:47:35 EndTime=2025-11-14T15:57:35 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2025-11-14T15:47:35 Scheduler=Main
+   Partition=All_AMD_Node AllocNode:Sid=pm10-nod014:17835
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=pm10-nod014
+   BatchHost=pm10-nod014
+   NumNodes=1 NumCPUs=96 NumTasks=1 CPUs/Task=24 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=24,mem=1M,node=1,billing=24
+   AllocTRES=cpu=96,node=1,billing=96
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   JOB_GRES=gpu:0
+     Nodes=pm10-nod014 CPU_IDs=0-95 Mem=0 GRES=gpu:0(IDX:)
+   MinCPUsNode=24 MinMemoryNode=0 MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=/home_nfs/xduprosf/affinity_script.sh
+   WorkDir=/home_nfs/xduprosf
+   StdErr=/home_nfs/xduprosf/bind-45922.error
+   StdIn=/dev/null
+   StdOut=/home_nfs/xduprosf/bind-45922.out
+   TresPerTask=cpu=24
+   
+
+
+-- scontrol show step -dd 45922.* (steps appear after launch) --
+
+========== SOFTWARE VERSIONS (HIP, ROCm) ==========
+-- rocm-smi --showdriverversion --showversion --
+-- hipcc --version --
+HIP version: 6.4.43484-123eb5128
+AMD clang version 19.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-6.4.3 25224 d366fa84f3fdcbd4b10847ebd5db572ae12a34fb)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rocm-6.4.3/lib/llvm/bin
+Configuration file: /opt/rocm-6.4.3/lib/llvm/bin/clang++.cfg
+-- hipconfig --version --
+6.4.43484-123eb5128-- hipconfig --platforms --
+HIP version: 6.4.43484-123eb5128
+
+==hipconfig
+HIP_PATH           :/opt/rocm-6.4.3
+ROCM_PATH          :/opt/rocm-6.4.3
+HIP_COMPILER       :clang
+HIP_PLATFORM       :amd
+HIP_RUNTIME        :rocclr
+CPP_CONFIG         : -D__HIP_PLATFORM_HCC__= -D__HIP_PLATFORM_AMD__= -I/opt/rocm-6.4.3/include -I/include
+
+==hip-clang
+HIP_CLANG_PATH     :/opt/rocm-6.4.3/lib/llvm/bin
+AMD clang version 19.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-6.4.3 25224 d366fa84f3fdcbd4b10847ebd5db572ae12a34fb)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rocm-6.4.3/lib/llvm/bin
+Configuration file: /opt/rocm-6.4.3/lib/llvm/bin/clang++.cfg
+AMD LLVM version 19.0.0git
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: znver3
+
+  Registered Targets:
+    amdgcn - AMD GCN GPUs
+    r600   - AMD GPUs HD2XXX-HD6XXX
+    x86    - 32-bit X86: Pentium-Pro and above
+    x86-64 - 64-bit X86: EM64T and AMD64
+hip-clang-cxxflags :
+ -O3
+hip-clang-ldflags :
+--driver-mode=g++ -O3 -Llib --hip-link
+
+== Environment Variables
+PATH =/opt/rocm-6.4.3/bin:/opt/rocm-6.4.3/llvm/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test32/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test31/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-test3/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-v3/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer-v2/PXI_HOME/bin:/lustremi/users/xduprosf/ATOSA-47-reproducer/PXI_HOME/bin:/home_nfs/xduprosf/.pixi/bin:/home_nfs/xduprosf/.local/bin:/home_nfs/xduprosf/bin:/root/.local/bin:/root/bin:/usr/share/Modules/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+HIP_PATH=/opt/rocm-6.4.3
+LD_LIBRARY_PATH=/opt/rocm-6.4.3/lib
+
+== Linux Kernel
+Hostname      :
+pm10-nod014
+Linux pm10-nod014 5.14.0-427.74.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jun 13 12:07:50 EDT 2025 x86_64 x86_64 x86_64 GNU/Linux
+LSB Version:	n/a
+Distributor ID:	RedHatEnterprise
+Description:	Red Hat Enterprise Linux 9.4 (Plow)
+Release:	9.4
+Codename:	n/a
+
+
+========== SYSTEM TOPOLOGY ==========
+Hyperthreading: enabled (threads per core = 2)
+Sockets: 2, Cores/socket: 24, NUMA nodes: 2
+-- lscpu key fields --
+Architecture:                         x86_64
+CPU(s):                               96
+On-line CPU(s) list:                  0-95
+Model name:                           AMD Instinct MI300A Accelerator
+Thread(s) per core:                   2
+Core(s) per socket:                   24
+Socket(s):                            2
+CPU(s) scaling MHz:                   100%
+NUMA node(s):                         2
+NUMA node0 CPU(s):                    0-23,48-71
+NUMA node1 CPU(s):                    24-47,72-95
+
+========== HWLOC NUMA TOPOLOGY (lstopo-no-graphics) ==========
+NUMANode L#0 (P#0 125GB)
+NUMANode L#1 (P#1 126GB)
+-- full topology --
+Machine (251GB total)
+  Package L#0
+    NUMANode L#0 (P#0 125GB)
+    L3 L#0 (32MB)
+      L2 L#0 (1024KB) + L1d L#0 (32KB) + L1i L#0 (32KB) + Core L#0
+        PU L#0 (P#0)
+        PU L#1 (P#48)
+      L2 L#1 (1024KB) + L1d L#1 (32KB) + L1i L#1 (32KB) + Core L#1
+        PU L#2 (P#1)
+        PU L#3 (P#49)
+      L2 L#2 (1024KB) + L1d L#2 (32KB) + L1i L#2 (32KB) + Core L#2
+        PU L#4 (P#2)
+        PU L#5 (P#50)
+      L2 L#3 (1024KB) + L1d L#3 (32KB) + L1i L#3 (32KB) + Core L#3
+        PU L#6 (P#3)
+        PU L#7 (P#51)
+      L2 L#4 (1024KB) + L1d L#4 (32KB) + L1i L#4 (32KB) + Core L#4
+        PU L#8 (P#4)
+        PU L#9 (P#52)
+      L2 L#5 (1024KB) + L1d L#5 (32KB) + L1i L#5 (32KB) + Core L#5
+        PU L#10 (P#5)
+        PU L#11 (P#53)
+      L2 L#6 (1024KB) + L1d L#6 (32KB) + L1i L#6 (32KB) + Core L#6
+        PU L#12 (P#6)
+        PU L#13 (P#54)
+      L2 L#7 (1024KB) + L1d L#7 (32KB) + L1i L#7 (32KB) + Core L#7
+        PU L#14 (P#7)
+        PU L#15 (P#55)
+    L3 L#1 (32MB)
+      L2 L#8 (1024KB) + L1d L#8 (32KB) + L1i L#8 (32KB) + Core L#8
+        PU L#16 (P#8)
+        PU L#17 (P#56)
+      L2 L#9 (1024KB) + L1d L#9 (32KB) + L1i L#9 (32KB) + Core L#9
+        PU L#18 (P#9)
+        PU L#19 (P#57)
+      L2 L#10 (1024KB) + L1d L#10 (32KB) + L1i L#10 (32KB) + Core L#10
+        PU L#20 (P#10)
+        PU L#21 (P#58)
+      L2 L#11 (1024KB) + L1d L#11 (32KB) + L1i L#11 (32KB) + Core L#11
+        PU L#22 (P#11)
+        PU L#23 (P#59)
+      L2 L#12 (1024KB) + L1d L#12 (32KB) + L1i L#12 (32KB) + Core L#12
+        PU L#24 (P#12)
+        PU L#25 (P#60)
+      L2 L#13 (1024KB) + L1d L#13 (32KB) + L1i L#13 (32KB) + Core L#13
+        PU L#26 (P#13)
+        PU L#27 (P#61)
+      L2 L#14 (1024KB) + L1d L#14 (32KB) + L1i L#14 (32KB) + Core L#14
+        PU L#28 (P#14)
+        PU L#29 (P#62)
+      L2 L#15 (1024KB) + L1d L#15 (32KB) + L1i L#15 (32KB) + Core L#15
+        PU L#30 (P#15)
+        PU L#31 (P#63)
+    L3 L#2 (32MB)
+      L2 L#16 (1024KB) + L1d L#16 (32KB) + L1i L#16 (32KB) + Core L#16
+        PU L#32 (P#16)
+        PU L#33 (P#64)
+      L2 L#17 (1024KB) + L1d L#17 (32KB) + L1i L#17 (32KB) + Core L#17
+        PU L#34 (P#17)
+        PU L#35 (P#65)
+      L2 L#18 (1024KB) + L1d L#18 (32KB) + L1i L#18 (32KB) + Core L#18
+        PU L#36 (P#18)
+        PU L#37 (P#66)
+      L2 L#19 (1024KB) + L1d L#19 (32KB) + L1i L#19 (32KB) + Core L#19
+        PU L#38 (P#19)
+        PU L#39 (P#67)
+      L2 L#20 (1024KB) + L1d L#20 (32KB) + L1i L#20 (32KB) + Core L#20
+        PU L#40 (P#20)
+        PU L#41 (P#68)
+      L2 L#21 (1024KB) + L1d L#21 (32KB) + L1i L#21 (32KB) + Core L#21
+        PU L#42 (P#21)
+        PU L#43 (P#69)
+      L2 L#22 (1024KB) + L1d L#22 (32KB) + L1i L#22 (32KB) + Core L#22
+        PU L#44 (P#22)
+        PU L#45 (P#70)
+      L2 L#23 (1024KB) + L1d L#23 (32KB) + L1i L#23 (32KB) + Core L#23
+        PU L#46 (P#23)
+        PU L#47 (P#71)
+    HostBridge
+      PCIBridge
+        PCI 01:00.0 (ProcessingAccelerator)
+    HostBridge
+      PCIBridge
+        PCIBridge
+          PCI 42:00.0 (VGA)
+      PCIBridge
+        PCI 43:00.0 (Ethernet)
+          Net "enp67s0"
+    HostBridge
+      PCIBridge
+        PCI 61:00.0 (InfiniBand)
+          Net "ib0"
+          OpenFabrics "mlx5_0"
+  Package L#1
+    NUMANode L#1 (P#1 126GB)
+    L3 L#3 (32MB)
+      L2 L#24 (1024KB) + L1d L#24 (32KB) + L1i L#24 (32KB) + Core L#24
+        PU L#48 (P#24)
+        PU L#49 (P#72)
+      L2 L#25 (1024KB) + L1d L#25 (32KB) + L1i L#25 (32KB) + Core L#25
+        PU L#50 (P#25)
+        PU L#51 (P#73)
+      L2 L#26 (1024KB) + L1d L#26 (32KB) + L1i L#26 (32KB) + Core L#26
+        PU L#52 (P#26)
+        PU L#53 (P#74)
+      L2 L#27 (1024KB) + L1d L#27 (32KB) + L1i L#27 (32KB) + Core L#27
+        PU L#54 (P#27)
+        PU L#55 (P#75)
+      L2 L#28 (1024KB) + L1d L#28 (32KB) + L1i L#28 (32KB) + Core L#28
+        PU L#56 (P#28)
+        PU L#57 (P#76)
+      L2 L#29 (1024KB) + L1d L#29 (32KB) + L1i L#29 (32KB) + Core L#29
+        PU L#58 (P#29)
+        PU L#59 (P#77)
+      L2 L#30 (1024KB) + L1d L#30 (32KB) + L1i L#30 (32KB) + Core L#30
+        PU L#60 (P#30)
+        PU L#61 (P#78)
+      L2 L#31 (1024KB) + L1d L#31 (32KB) + L1i L#31 (32KB) + Core L#31
+        PU L#62 (P#31)
+        PU L#63 (P#79)
+    L3 L#4 (32MB)
+      L2 L#32 (1024KB) + L1d L#32 (32KB) + L1i L#32 (32KB) + Core L#32
+        PU L#64 (P#32)
+        PU L#65 (P#80)
+      L2 L#33 (1024KB) + L1d L#33 (32KB) + L1i L#33 (32KB) + Core L#33
+        PU L#66 (P#33)
+        PU L#67 (P#81)
+      L2 L#34 (1024KB) + L1d L#34 (32KB) + L1i L#34 (32KB) + Core L#34
+        PU L#68 (P#34)
+        PU L#69 (P#82)
+      L2 L#35 (1024KB) + L1d L#35 (32KB) + L1i L#35 (32KB) + Core L#35
+        PU L#70 (P#35)
+        PU L#71 (P#83)
+      L2 L#36 (1024KB) + L1d L#36 (32KB) + L1i L#36 (32KB) + Core L#36
+        PU L#72 (P#36)
+        PU L#73 (P#84)
+      L2 L#37 (1024KB) + L1d L#37 (32KB) + L1i L#37 (32KB) + Core L#37
+        PU L#74 (P#37)
+        PU L#75 (P#85)
+      L2 L#38 (1024KB) + L1d L#38 (32KB) + L1i L#38 (32KB) + Core L#38
+        PU L#76 (P#38)
+        PU L#77 (P#86)
+      L2 L#39 (1024KB) + L1d L#39 (32KB) + L1i L#39 (32KB) + Core L#39
+        PU L#78 (P#39)
+        PU L#79 (P#87)
+    L3 L#5 (32MB)
+      L2 L#40 (1024KB) + L1d L#40 (32KB) + L1i L#40 (32KB) + Core L#40
+        PU L#80 (P#40)
+        PU L#81 (P#88)
+      L2 L#41 (1024KB) + L1d L#41 (32KB) + L1i L#41 (32KB) + Core L#41
+        PU L#82 (P#41)
+        PU L#83 (P#89)
+      L2 L#42 (1024KB) + L1d L#42 (32KB) + L1i L#42 (32KB) + Core L#42
+        PU L#84 (P#42)
+        PU L#85 (P#90)
+      L2 L#43 (1024KB) + L1d L#43 (32KB) + L1i L#43 (32KB) + Core L#43
+        PU L#86 (P#43)
+        PU L#87 (P#91)
+      L2 L#44 (1024KB) + L1d L#44 (32KB) + L1i L#44 (32KB) + Core L#44
+        PU L#88 (P#44)
+        PU L#89 (P#92)
+      L2 L#45 (1024KB) + L1d L#45 (32KB) + L1i L#45 (32KB) + Core L#45
+        PU L#90 (P#45)
+        PU L#91 (P#93)
+      L2 L#46 (1024KB) + L1d L#46 (32KB) + L1i L#46 (32KB) + Core L#46
+        PU L#92 (P#46)
+        PU L#93 (P#94)
+      L2 L#47 (1024KB) + L1d L#47 (32KB) + L1i L#47 (32KB) + Core L#47
+        PU L#94 (P#47)
+        PU L#95 (P#95)
+    HostBridge
+      PCIBridge
+        PCI 81:00.0 (ProcessingAccelerator)
+    HostBridge
+      PCIBridge
+        PCI e1:00.0 (InfiniBand)
+          Net "ib1"
+          OpenFabrics "mlx5_1"
+=====================================
+
+[INFO] GPUs detected (gfx942): 0 1
+[INFO] Compiling hello_jobstep_hip...
+✓ Built: /tmp/hello_jobstep_hip_45922_18176
+[INFO] Compiling cpu_affinity (POSIX pthreads)...
+✓ Built: /tmp/cpu_affinity_threads_45922_18176
+[INFO] Compiling omp_affinity (OpenMP)...
+✓ Built: /tmp/omp_affinity_45922_18176
+
+========== EXPERIMENT A: Unbound info-only (srun, OMP_NUM_THREADS=1) ==========
+[A:Context] Launching with srun (no explicit --ntasks/--cpus-per-task)
+[A:Env] OMP_NUM_THREADS=1
+[A:Proc pre-run] PID=18176, Cpus_allowed_list=0-95, Mems_allowed_list=0-1
+MPI 000 - OMP 000 - HWT 005 - Node pm10-nod014 - RT_GPU_ID 0 - GPU_ID 0 - Bus_ID 01
+[A:Post] For step info, see: scontrol show step 45922.*
+
+========== EXPERIMENT B: POSIX pthreads, Threads=1 ==========
+[B:Proc pre-run] PID=18176, Cpus_allowed_list=0-95, Mems_allowed_list=0-1
+[POSIX] PID=18367, Threads=1
+Cpus_allowed_list:	0-95
+Mems_allowed_list:	0-1
+Node pm10-nod014 - POSIX_TID 000 - HWT 037 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 
+
+========== EXPERIMENT C: OpenMP, OMP_NUM_THREADS=1 ==========
+[C:Env] OMP_NUM_THREADS=1
+[C:Proc pre-run] PID=18176, Cpus_allowed_list=0-95, Mems_allowed_list=0-1
+[OpenMP] PID=18371, OMP_NUM_THREADS=1
+Cpus_allowed_list:	0-95
+Mems_allowed_list:	0-1
+Node pm10-nod014 - OMP 000 - HWT 037 - Affinity: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 
+=== RUN END Fri Nov 14 15:47:53 UTC 2025 ===
