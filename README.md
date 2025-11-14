@@ -1,7 +1,7 @@
 # viper-scripts  : script/data for both Viper and Ouranos
 ## Simple binding check
 - **affinity_script.sh** : report binding on the target system (generic)
-- Three examples are provided (output file for 1 thread) for Ouranos, Viper and Lockhart.
+- Three examples are provided for illustration (output file for 1 thread) for Ouranos, Viper and Lockhart. This includes info also on the NUMA topology, HT...
 - Three experiments :  OpenMP threads, Pthreads and Binding script from from ORNL
 
   
