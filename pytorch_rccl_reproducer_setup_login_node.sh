@@ -13,6 +13,8 @@ export HF_DATASETS_CACHE=$TARGET_DIR/HF_DATA_CACHE
 export PATH="/home_nfs/xduprosf/.pixi/bin:$PATH"
 export PIXI_HOME=$TARGET_DIR/PXI_HOME
 export PIXI_CACHE_DIR=$TARGET_DIR/PXI_CACHE
+export HUGGINGFACE_HUB_TOKEN=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
+
 mkdir $TARGET_DIR
 cd $TARGET_DIR
 
