@@ -15,7 +15,8 @@
   * NOTE : 1/This scripts needs further cleaning  2/Full validation needed w.r.t viper-gpu settings.
 
 ## Simple job submission
-- `sbatch $TARGET_DIR/scripts/viper-gpu/google_vit/imagenet/vitc/google_vitc_b_16_B2.sh`
+-  `cd  $TARGET_DIR/RCCL_ISSUE`
+-  `sbatch $TARGET_DIR/scripts/viper-gpu/google_vit/imagenet/vitc/google_vitc_b_16_B2.sh`
 
 
 ## Crontab 
