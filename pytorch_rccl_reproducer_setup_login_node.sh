@@ -51,7 +51,7 @@ sed -i '/^\[feature\.rocm\.activation\.env\]/,/^\[.*\]/ {
 
 ####################
 pixi run -e rocm wandb disabled
-pixi run -e rocm hf auth login --token TBD  --add-to-git-credential
+pixi run -e rocm hf auth login --token $HUGGINGFACE_HUB_TOKEN  --add-to-git-credential
 ####################
 sed -i '1,11d' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
 sed -i "1i\\
