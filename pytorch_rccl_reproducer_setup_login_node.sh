@@ -7,12 +7,13 @@
 # Setup
 ####################
 
-export TARGET_DIR=/lustremi/users/$USER/ATOSA-47-reproducer
+export TARGET_DIR=/lustremi/users/$USER/ATOSA-47-reproducer-TEST9
 export HF_HOME=$TARGET_DIR/HF_HOME
 export HF_DATASETS_CACHE=$TARGET_DIR/HF_DATA_CACHE
+export PATH="/home_nfs/xduprosf/.pixi/bin:$PATH"
 export PIXI_HOME=$TARGET_DIR/PXI_HOME
 export PIXI_CACHE_DIR=$TARGET_DIR/PXI_CACHE
-export PATH="$PIXI_HOME/bin:$PATH"
+
 ########
 export HUGGINGFACE_HUB_TOKEN=
 export HF_TOKEN=$HUGGINGFACE_HUB_TOKEN
@@ -76,10 +77,11 @@ export HF_DATASETS_CACHE=$TARGET_DIR/HF_DATA_CACHE\
 export HF_DATASETS_DISABLE_MEMORY_MAPPING=1\
 export HF_HUB_OFFLINE=1\
 export TRANSFORMERS_OFFLINE=1\
-export PATH="$PIXI_HOME/bin:$PATH"\
+export PATH="/home_nfs/xduprosf/.pixi/bin:$PATH"\
 export PIXI_HOME=$TARGET_DIR/PXI_HOME\
 export PIXI_CACHE_DIR=$TARGET_DIR/PXI_CACHE' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
 sed -i 's|/u/gajdab/.pixi/bin/pixi|pixi|g' scripts/viper-gpu/google_vit/imagenet/vitc/google_vit_b_16_B2.sh
+
 
 
 
