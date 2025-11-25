@@ -1,0 +1,46 @@
+# AGHFC Step by step
+
+#### ***************************************************************************************
+
+
+module load amd-llvm/7.1 rocm/6.4
+module load openmpi_gpu/5.0
+export MY_RVS="/opt/rocm/bin/rvs
+ln -s "$MY_RVS" /mpcdf/soft/RHEL_9/packages/x86_64/rocm/6.4.3/bin/rvs
+ 
+##cp ~/agfhc-mi300_1.27.2_rhel9.tar.bz2 .
+
+tar -xzf agfhc-mi300_1.27.2_rhel9.tar.bz2
+prefix=/ptmp/$USER/AGFHC/TEST_install
+
+./install --rocm-ver 6.4 -o /viper/ptmp2/$USER/AGFHC/TEST_install/
+python3 -m ensurepip --upgrade || true
+python3 -m pip install --user --upgrade pip
+python3 -m pip install --user psutil
+
+
+# Create and activate a venv (no sudo)
+python3 -m venv $HOME/.venvs/agfhc
+source $HOME/.venvs/agfhc/bin/activate
+pip install --upgrade pip
+
+pip install psutil  
+pip install PyYAML
+
+export TXB_PATH=/ptmp/fdupros/AGFHC/TEST_install/transferbench
+export FIREXS_PATH=/ptmp/fdupros/AGFHC/TEST_install/firexs2
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$FIREXS_PATH/usr/lib
+export FIREXS2_APP_PATH=$FIREXS_PATH/usr/lib/firexs2
+export MINIHPL_PATH=/ptmp/fdupros/AGFHC/TEST_install/minihpl
+
+
+git clone https://github.com/ROCm/rocHPL.git
+mkdir /ptmp/fdupros/AGFHC/rocHPL/build
+
+ ./install.sh --prefix=/ptmp/$USER/AGFHC/rochpl_bin  --with-rocm=$ROCM_PATH --with-rocblas=$ROCM_PATH/rocblas --with-mpi=/mpcdf/soft/RHEL_9/packages/znver4/openmpi_gpu/amd-llvm_7.1-7.1.1-rocm_6.4-6.4.3/5.0.8/
+export PATH=$PATH:/ptmp/fdupros/AGFHC/rochpl_bin
+export ROCHPL_PATH=/ptmp/$USER/AGFHC/rochpl_bin
+
+
+/viper/ptmp2/$USER/AGFHC/TEST_install/agfhc/agfhc   --list
+/viper/ptmp2/$USER/AGFHC/TEST_install/agfhc/agfhc    -r single_pass 
