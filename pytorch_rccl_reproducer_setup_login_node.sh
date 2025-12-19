@@ -97,5 +97,5 @@ group="google-vit-imagenet-vit_b_16_B=2"
 weight_decay=0.1
 
  
-pixi run train_viper --experiment_name "$model" --num_workers $num_workers --group "$group" --epochs 90  --dataset "imagenet1k" --batch_size $batch_size --weight_decay $weight_decay --lr $learning_rate --optimizer $optimizer --compile_mode "default"
+srun pixi run train_viper --experiment_name "$model" --num_workers $num_workers --group "$group" --epochs 90  --dataset "imagenet1k" --batch_size $batch_size --weight_decay $weight_decay --lr $learning_rate --optimizer $optimizer --compile_mode "default"
 
